@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjlmosu27ht6m"]
+
+[ext_resource type="Script" uid="uid://drcdwk6lq1u8o" path="res://scripts/ayla.gd" id="1_q8klw"]
+[ext_resource type="Texture2D" uid="uid://b5ai2w0wlymw5" path="res://sprites/ayla_sprites/2.png" id="2_x6xkt"]
+[ext_resource type="Texture2D" uid="uid://hab5k4bdp2nu" path="res://sprites/ayla_sprites/3.png" id="3_6yic3"]
+[ext_resource type="Texture2D" uid="uid://d2atetvweyu6d" path="res://sprites/ayla_sprites/4.png" id="4_4jclc"]
+[ext_resource type="Texture2D" uid="uid://sn23kh86vaan" path="res://sprites/ayla_sprites/5.png" id="5_n2w70"]
+[ext_resource type="Texture2D" uid="uid://b377r6hdythv0" path="res://sprites/ayla_sprites/6.png" id="6_fn2r8"]
+[ext_resource type="Texture2D" uid="uid://b7546nwf27v2i" path="res://sprites/ayla_sprites/7.png" id="7_mbf34"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7u0sy"]
+radius = 14.0
+height = 42.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3hxc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x6xkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6yic3")
+}],
+"loop": true,
+"name": &"frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4jclc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n2w70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fn2r8")
+}],
+"loop": true,
+"name": &"lado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mbf34")
+}],
+"loop": true,
+"name": &"tras",
+"speed": 5.0
+}]
+
+[node name="Ayla" type="CharacterBody2D"]
+script = ExtResource("1_q8klw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7u0sy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m3hxc")
+animation = &"tras"
+frame_progress = 0.99313873

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c78b0knog6ymq"
-path="res://.godot/imported/3.png-1bbc6b3c2742b2af1fd50033d8bba7c3.ctex"
+uid="uid://hab5k4bdp2nu"
+path="res://.godot/imported/3.png-26455442143289278244bb93f91910c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://personagem/3.png"
-dest_files=["res://.godot/imported/3.png-1bbc6b3c2742b2af1fd50033d8bba7c3.ctex"]
+source_file="res://sprites/ayla_sprites/3.png"
+dest_files=["res://.godot/imported/3.png-26455442143289278244bb93f91910c9.ctex"]
 
 [params]
 
