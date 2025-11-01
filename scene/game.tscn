@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbn3xb0fu1lo2"]
+
+[ext_resource type="Script" uid="uid://drcdwk6lq1u8o" path="res://scripts/ayla.gd" id="1_5kiuu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbls1"]
+radius = 12.0
+height = 36.0
+
+[node name="game" type="Node2D"]
+
+[node name="ayla" type="CharacterBody2D" parent="."]
+position = Vector2(205, 350)
+script = ExtResource("1_5kiuu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ayla"]
+shape = SubResource("CapsuleShape2D_dbls1")
