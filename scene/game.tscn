@@ -1,18 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbn3xb0fu1lo2"]
+[gd_scene load_steps=6 format=3 uid="uid://dbn3xb0fu1lo2"]
 
-[ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://personagem/ayla.tscn" id="1_5kiuu"]
+[ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kiuu"]
-size = Vector2(1150.75, 59)
+size = Vector2(234.5, 32.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbls1"]
+size = Vector2(81.25, 32.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
+size = Vector2(67, 32.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwcet"]
+size = Vector2(102.3125, 32.5)
 
 [node name="game" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(576.625, 617)
+position = Vector2(112, 284)
 shape = SubResource("RectangleShape2D_5kiuu")
 debug_color = Color(1.4920532e-06, 0.6343767, 0.4333979, 0.41960785)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(293, 255)
+shape = SubResource("RectangleShape2D_dbls1")
+debug_color = Color(1.4920532e-06, 0.6343767, 0.4333979, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(399.5, 216)
+shape = SubResource("RectangleShape2D_33cqm")
+debug_color = Color(1.4920532e-06, 0.6343767, 0.4333979, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(511.84375, 177)
+shape = SubResource("RectangleShape2D_xwcet")
+debug_color = Color(1.4920532e-06, 0.6343767, 0.4333979, 0.41960785)
+
 [node name="Ayla" parent="." instance=ExtResource("1_5kiuu")]
-position = Vector2(235, 412)
+position = Vector2(28, 210)
