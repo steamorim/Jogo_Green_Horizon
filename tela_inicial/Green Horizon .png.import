@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nw5g5hs1tj20"
-path="res://.godot/imported/Blocks (16 x 16).png-6c5259e0ea528c2308e66bcc58c87c26.ctex"
+uid="uid://c8i5x6yoeq4hn"
+path="res://.godot/imported/Green Horizon .png-9ac50afdd6337a356ffa41f8ef42abc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png"
-dest_files=["res://.godot/imported/Blocks (16 x 16).png-6c5259e0ea528c2308e66bcc58c87c26.ctex"]
+source_file="res://tela_inicial/Green Horizon .png"
+dest_files=["res://.godot/imported/Green Horizon .png-9ac50afdd6337a356ffa41f8ef42abc6.ctex"]
 
 [params]
 

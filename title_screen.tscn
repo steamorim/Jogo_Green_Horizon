@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnin5p3a3a44i"]
+
+[ext_resource type="Texture2D" uid="uid://cjqljwidv8dp4" path="res://sprites/backgrounds/325608924ec64cec5fe900e836bbcea5.jpg" id="1_05l2w"]
+[ext_resource type="Texture2D" uid="uid://c8i5x6yoeq4hn" path="res://tela_inicial/Green Horizon .png" id="2_hafda"]
+[ext_resource type="Theme" uid="uid://q6gogl2dnj7u" path="res://default_Button.tres" id="3_tpml5"]
+[ext_resource type="Texture2D" uid="uid://hab5k4bdp2nu" path="res://sprites/ayla_sprites/3.png" id="4_jqemp"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 300.0
+texture = ExtResource("1_05l2w")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_hafda")
+expand_mode = 5
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tpml5")
+text = "START"
+
+[node name="start_btn2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tpml5")
+text = "CREDITS"
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.34
+theme = ExtResource("3_tpml5")
+text = "QUIT GAME"
+
+[node name="mochi" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_jqemp")
+expand_mode = 2
