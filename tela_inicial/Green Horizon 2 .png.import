@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyap70mbf3b2n"
-path="res://.godot/imported/Burger_&_Fries (16 x 16).png-8e770c4639c1b099f60a0befaca006b3.ctex"
+uid="uid://ea2an26cb580"
+path="res://.godot/imported/Green Horizon 2 .png-4d09f8079a4de01325cf5028e409f8d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png"
-dest_files=["res://.godot/imported/Burger_&_Fries (16 x 16).png-8e770c4639c1b099f60a0befaca006b3.ctex"]
+source_file="res://tela_inicial/Green Horizon 2 .png"
+dest_files=["res://.godot/imported/Green Horizon 2 .png-4d09f8079a4de01325cf5028e409f8d3.ctex"]
 
 [params]
 

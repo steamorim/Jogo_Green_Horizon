@@ -25,6 +25,10 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.318755, 0.146538, 0.013579, 1)
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 5.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lorlb"]
 bg_color = Color(0.49486, 0.325135, 0.129082, 1)
