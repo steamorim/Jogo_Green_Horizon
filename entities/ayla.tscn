@@ -54,15 +54,14 @@ script = ExtResource("1_q8klw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(0, -1)
-scale = Vector2(0.0750539, 0.0727597)
+scale = Vector2(0.07505388, 0.07275967)
 sprite_frames = SubResource("SpriteFrames_m3hxc")
 animation = &"idle"
 frame = 1
-frame_progress = 0.159806
+frame_progress = 0.15980597
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 925

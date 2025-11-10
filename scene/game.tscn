@@ -3,12 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_ve786"]
 [ext_resource type="TileSet" uid="uid://b2g0x6ckmvyfw" path="res://scene/decoration.tres" id="3_33cqm"]
-[ext_resource type="Texture2D" uid="uid://cjqljwidv8dp4" path="res://sprites/backgrounds/325608924ec64cec5fe900e836bbcea5.jpg" id="4_xwcet"]
+[ext_resource type="Texture2D" uid="uid://b0k3o25u5lmes" path="res://sprites/backgrounds/florestaa.jpg" id="4_xwcet"]
 
 [node name="game" type="Node2D"]
 
-[node name="Ayla" parent="." instance=ExtResource("1_5kiuu")]
-position = Vector2(31, 415)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="camada1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(925, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/camada1"]
+position = Vector2(5.684342e-14, 1.0000076)
+scale = Vector2(1.0010799, 0.99)
+texture = ExtResource("4_xwcet")
+centered = false
 
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2(0, 196)
@@ -21,14 +30,5 @@ tile_set = ExtResource("2_ve786")
 tile_map_data = PackedByteArray("AAAEAA0AAQAJAAEAAAAFAA0AAQAFAAEAAAASAAsAAQAJAAEAAAAUAAsAAQAFAAEAAAARAAwAAQABAAUAAAAOAAoAAQABAAUAAAACAA4AAQABAAUAAAAGAA4AAQABAAUAAAAEAA4AAQABAAUAAAASAAwAAwADAAAAAAAAAA4AAQADAAUAAAAFAA4AAwAAAAAAAAAPAAoAAwACAAAAAAAXAAgAAQABAAUAAAAbAAYAAQABAAUAAAAcAA4AAQABAAUAAAAfAAkAAQABAAUAAAAiAAkAAQABAAUAAAAgAAMAAQABAAUAAAAnAA4AAQABAAUAAAAgAA4AAQAHAAUAAAAjAA4AAQABAAUAAAAtAAsAAQABAAUAAAArAAsAAQABAAUAAAA5AAgAAQADAAUAAAAeAA4AAQAFAAUAAAAfAA4AAQAGAAUAAAAiAAgAAgABAAEAAAAvAAMAAgABAAEAAAAuAAQAAwAAAAAAAAAiAAMAAwACAAAAAAAhAA4AAwADAAAAAAAWAAgAAwABAAAAAAAhAAIAAQAFAAEAAAAsAAoAAQAFAAEAAAAgAA0AAQAFAAEAAAAOAAkAAQAFAAEAAAAIAAwAAQAFAAEAAAAIAA0AAwABAAAAAAAJAAwAAQAJAAEAAAAXAAwAAQABAAUAAAAYAAsAAQAJAAEAAAAZAAwAAQABAAUAAAAzAAgAAwADAAAAAAA0AAgAAQAFAAUAAAA1AAgAAQAGAAUAAAA2AAcAAQAFAAEAAAA2AAgAAQAHAAUAAAA3AAgAAQABAAUAAAA4AAgAAQABAAUAAAA=")
 tile_set = ExtResource("3_33cqm")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="camada1" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(925, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/camada1"]
-position = Vector2(5.68434e-14, 1.00001)
-scale = Vector2(1.00108, 0.99)
-texture = ExtResource("4_xwcet")
-centered = false
+[node name="Ayla" parent="." instance=ExtResource("1_5kiuu")]
+position = Vector2(21, 425)
