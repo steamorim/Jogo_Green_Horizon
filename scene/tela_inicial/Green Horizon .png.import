@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct8s7dv25q2kh"
-path="res://.godot/imported/1 - Leaf_top.png-b8de18f08db757c620b639b392f505cd.ctex"
+uid="uid://c8i5x6yoeq4hn"
+path="res://.godot/imported/Green Horizon .png-fec57b8c4858ae720dc0a8df7dd9bc16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png"
-dest_files=["res://.godot/imported/1 - Leaf_top.png-b8de18f08db757c620b639b392f505cd.ctex"]
+source_file="res://scene/tela_inicial/Green Horizon .png"
+dest_files=["res://.godot/imported/Green Horizon .png-fec57b8c4858ae720dc0a8df7dd9bc16.ctex"]
 
 [params]
 

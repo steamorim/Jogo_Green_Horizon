@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GreenHorizon"
-run/main_scene="uid://crvurvifxwb2f"
+run/main_scene="uid://trcei33tlmc6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

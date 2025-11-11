@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://q6gogl2dnj7u"]
 
-[ext_resource type="FontFile" uid="uid://c1x2nx0oi38yc" path="res://tela_inicial/PressStart2P-vaV7.ttf" id="1_y34or"]
+[ext_resource type="FontFile" uid="uid://c1x2nx0oi38yc" path="res://scene/tela_inicial/PressStart2P-vaV7.ttf" id="1_y34or"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hugc"]
 bg_color = Color(0.447425, 0.213878, 0.0297316, 1)
