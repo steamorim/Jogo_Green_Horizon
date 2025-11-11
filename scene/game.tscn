@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=4 uid="uid://crvurvifxwb2f"]
+[gd_scene load_steps=7 format=4 uid="uid://crvurvifxwb2f"]
 
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_ve786"]
+[ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="2_xlg7c"]
 [ext_resource type="TileSet" uid="uid://b2g0x6ckmvyfw" path="res://scene/decoration.tres" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://b0k3o25u5lmes" path="res://sprites/backgrounds/florestaa.jpg" id="4_xwcet"]
+[ext_resource type="Texture2D" uid="uid://b2q7brcmxsnqm" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="6_qpk70"]
 
 [node name="game" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="camada1" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(925, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/camada1"]
@@ -18,6 +19,15 @@ position = Vector2(5.684342e-14, 1.0000076)
 scale = Vector2(1.0010799, 0.99)
 texture = ExtResource("4_xwcet")
 centered = false
+
+[node name="camada2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(650, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/camada2"]
+position = Vector2(297.3846, 218.5)
+scale = Vector2(2.0721154, 2.0721152)
+texture = ExtResource("2_xlg7c")
 
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2(0, 196)
@@ -32,3 +42,18 @@ tile_set = ExtResource("3_33cqm")
 
 [node name="Ayla" parent="." instance=ExtResource("1_5kiuu")]
 position = Vector2(21, 425)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="camada3" type="ParallaxLayer" parent="ParallaxBackground2"]
+visible = false
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(615, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/camada3"]
+visible = false
+position = Vector2(310, 84.99999)
+rotation = -3.1503193
+scale = Vector2(2.1458333, 2.0384614)
+texture = ExtResource("6_qpk70")

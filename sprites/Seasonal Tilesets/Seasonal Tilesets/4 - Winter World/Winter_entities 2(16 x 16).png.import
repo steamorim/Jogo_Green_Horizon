@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb033ics65jsp"
-path="res://.godot/imported/logojogo1.png-605da619b59b122b8780f51fc933d006.ctex"
+uid="uid://bblks30vpono5"
+path="res://.godot/imported/Winter_entities 2(16 x 16).png-c6bc377b40a09c0895b684fe0a83c47e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tela_inicial/logojogo1.png"
-dest_files=["res://.godot/imported/logojogo1.png-605da619b59b122b8780f51fc933d006.ctex"]
+source_file="res://sprites/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities 2(16 x 16).png"
+dest_files=["res://.godot/imported/Winter_entities 2(16 x 16).png-c6bc377b40a09c0895b684fe0a83c47e.ctex"]
 
 [params]
 

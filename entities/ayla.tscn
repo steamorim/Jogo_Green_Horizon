@@ -57,11 +57,11 @@ position = Vector2(0, -1)
 scale = Vector2(0.07505388, 0.07275967)
 sprite_frames = SubResource("SpriteFrames_m3hxc")
 animation = &"idle"
-frame = 1
-frame_progress = 0.15980597
+frame_progress = 0.88346064
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_right = 925
