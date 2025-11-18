@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dedxm6gayefo3"
-path="res://.godot/imported/floresta1.png-fb30ec7a567173a4df791f3ca172a4a3.ctex"
+uid="uid://c1efym3rtqeyi"
+path="res://.godot/imported/Flight_Ending_(32 x 32).png-1e96f6b6d3bcd694b9b1c0a7aa9d2f11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/backgrounds/floresta1.png"
-dest_files=["res://.godot/imported/floresta1.png-fb30ec7a567173a4df791f3ca172a4a3.ctex"]
+source_file="res://sprites/inimigo_cidade/1 - Robo Retro/Flight_Ending_(32 x 32).png"
+dest_files=["res://.godot/imported/Flight_Ending_(32 x 32).png-1e96f6b6d3bcd694b9b1c0a7aa9d2f11.ctex"]
 
 [params]
 

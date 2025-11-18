@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e655be677tat"
-path="res://.godot/imported/cactos.png-dc2175c2bc93738ac69f08845e1a9ca9.ctex"
+uid="uid://w6xobxiujm16"
+path="res://.godot/imported/Walking_(64 x 32).png-2fedd3e9406b676581d0be9396846cce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/elementos/cactos.png"
-dest_files=["res://.godot/imported/cactos.png-dc2175c2bc93738ac69f08845e1a9ca9.ctex"]
+source_file="res://sprites/inimigo_floresta/8 - Orc/Walking_(64 x 32).png"
+dest_files=["res://.godot/imported/Walking_(64 x 32).png-2fedd3e9406b676581d0be9396846cce.ctex"]
 
 [params]
 
