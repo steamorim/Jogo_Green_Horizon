@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://b83wu4fbpuhrf"]
+
+[ext_resource type="Texture2D" uid="uid://cj5oycsyra5nq" path="res://sprites/inimigo_cidade/1 - Robo Retro/1.png" id="1_4eisp"]
+[ext_resource type="Script" uid="uid://da3a1tcuunux7" path="res://scripts/inimigo_cidade.gd" id="1_mowdb"]
+[ext_resource type="Texture2D" uid="uid://cnkj8wjewbr3g" path="res://sprites/inimigo_cidade/1 - Robo Retro/2.png" id="2_mowdb"]
+[ext_resource type="Texture2D" uid="uid://dyn7ne5udj6pv" path="res://sprites/inimigo_cidade/1 - Robo Retro/6.png" id="3_m7gfj"]
+[ext_resource type="Texture2D" uid="uid://bidvfquellmxa" path="res://sprites/inimigo_cidade/1 - Robo Retro/5.png" id="4_4n6of"]
+[ext_resource type="Texture2D" uid="uid://vkkno842qmfi" path="res://sprites/inimigo_cidade/1 - Robo Retro/3.png" id="5_bsxqe"]
+[ext_resource type="Texture2D" uid="uid://cqoyem73mfy55" path="res://sprites/inimigo_cidade/1 - Robo Retro/4.png" id="6_f4x25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejkhs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5yvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4eisp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mowdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m7gfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4n6of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bsxqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f4x25")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4eisp"]
+height = 20.0
+
+[node name="inimigo_cidade" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_mowdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ejkhs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_x5yvj")
+animation = &"walk"
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_4eisp")
+debug_color = Color(0.9485659, 4.5242905e-06, 0.5800585, 0.41960785)

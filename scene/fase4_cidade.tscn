@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bycdxwo1jnol8"]
+[gd_scene load_steps=19 format=4 uid="uid://bycdxwo1jnol8"]
 
 [ext_resource type="Texture2D" uid="uid://qnkr25u2ya2t" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Bubbling_Oil_frames (16 x 32).png" id="1_bo3mb"]
 [ext_resource type="Texture2D" uid="uid://nw5g5hs1tj20" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_ksbtv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cyh5jx2ii0mtw" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Snack_machine_Bench_Trash_bin (16 x 16).png" id="4_cgxv3"]
 [ext_resource type="Texture2D" uid="uid://b7id7hga1ajpq" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="6_cgxv3"]
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="9_o8ucq"]
+[ext_resource type="PackedScene" uid="uid://b83wu4fbpuhrf" path="res://entities/inimigo_cidade.tscn" id="10_uo4p3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgxv3"]
 texture = ExtResource("1_bo3mb")
@@ -247,3 +248,15 @@ position = Vector2(5.684342e-14, 1.0000076)
 scale = Vector2(2.4161654, 2.3894231)
 texture = ExtResource("9_o8ucq")
 centered = false
+
+[node name="inimigo_cidade" parent="." instance=ExtResource("10_uo4p3")]
+position = Vector2(734, 468)
+
+[node name="inimigo_cidade2" parent="." instance=ExtResource("10_uo4p3")]
+position = Vector2(150, 464)
+
+[node name="inimigo_cidade3" parent="." instance=ExtResource("10_uo4p3")]
+position = Vector2(1010, 405)
+
+[node name="inimigo_cidade4" parent="." instance=ExtResource("10_uo4p3")]
+position = Vector2(1115, 260)

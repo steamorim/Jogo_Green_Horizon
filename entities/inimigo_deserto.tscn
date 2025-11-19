@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfisqx533kbqa"]
+
+[ext_resource type="Script" uid="uid://csyir7p0wrla5" path="res://scripts/inimigo_deserto.gd" id="1_7ghpq"]
+[ext_resource type="Texture2D" uid="uid://ttm0t04dm3bf" path="res://sprites/inimigo_deserto/5 - Devo the Devil/1.png" id="2_wv887"]
+[ext_resource type="Texture2D" uid="uid://bpub8trne2gtc" path="res://sprites/inimigo_deserto/5 - Devo the Devil/2.png" id="3_5mfrs"]
+[ext_resource type="Texture2D" uid="uid://b7o7vho3ksker" path="res://sprites/inimigo_deserto/5 - Devo the Devil/3.png" id="4_r01yq"]
+[ext_resource type="Texture2D" uid="uid://dbehgxi6i717y" path="res://sprites/inimigo_deserto/5 - Devo the Devil/4.png" id="5_3gqk1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ghpq"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2d7wt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wv887")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mfrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r01yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3gqk1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ghpq"]
+size = Vector2(14.5, 13)
+
+[node name="inimigo_deserto" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_7ghpq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_7ghpq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_2d7wt")
+animation = &"walk"
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.25, -0.5)
+shape = SubResource("RectangleShape2D_7ghpq")
+debug_color = Color(0.77688366, 0.34558707, 0.7006151, 0.41960785)

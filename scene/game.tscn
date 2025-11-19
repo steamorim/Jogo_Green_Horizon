@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://crvurvifxwb2f"]
+[gd_scene load_steps=8 format=4 uid="uid://crvurvifxwb2f"]
 
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_ve786"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://b2g0x6ckmvyfw" path="res://scene/decoration.tres" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://b0k3o25u5lmes" path="res://sprites/backgrounds/florestaa.jpg" id="4_xwcet"]
 [ext_resource type="Texture2D" uid="uid://b2q7brcmxsnqm" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="6_qpk70"]
+[ext_resource type="PackedScene" uid="uid://u3lj0f7kk3vd" path="res://entities/inimigo_floresta.tscn" id="7_qpk70"]
 
 [node name="game" type="Node2D"]
 
@@ -57,3 +58,12 @@ position = Vector2(310, 84.99999)
 rotation = -3.1503193
 scale = Vector2(2.1458333, 2.0384614)
 texture = ExtResource("6_qpk70")
+
+[node name="inimigo_floresta" parent="." instance=ExtResource("7_qpk70")]
+position = Vector2(239, 391)
+
+[node name="inimigo_floresta2" parent="." instance=ExtResource("7_qpk70")]
+position = Vector2(546, 346)
+
+[node name="inimigo_floresta3" parent="." instance=ExtResource("7_qpk70")]
+position = Vector2(751, 373)
