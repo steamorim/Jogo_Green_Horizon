@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfipmmre5kl7r"
+path="res://.godot/imported/Three Red Hearts - Modern Bits.ogg-cbce9a98378cec3da1453e7a78da97b0.oggvorbisstr"
+
+[deps]
+
+source_file="res://musics/Three Red Hearts - Modern Bits.ogg"
+dest_files=["res://.godot/imported/Three Red Hearts - Modern Bits.ogg-cbce9a98378cec3da1453e7a78da97b0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

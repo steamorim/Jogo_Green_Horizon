@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=3 uid="uid://trcei33tlmc6"]
+
+[ext_resource type="Script" uid="uid://cmut4n7p31p2a" path="res://scene/tela_inicial/tela_inicial.gd" id="1_jv6w4"]
+[ext_resource type="Texture2D" uid="uid://dp81xfagq0222" path="res://sprites/backgrounds/telainicial.png" id="2_wktbu"]
+[ext_resource type="Texture2D" uid="uid://co3fbelkqhpwb" path="res://scene/tela_inicial/logojogo2.png" id="3_fa5yf"]
+[ext_resource type="Theme" uid="uid://2ydfrcgmyfre" path="res://scene/tela_inicial/default_btn.tres" id="4_rc74i"]
+[ext_resource type="Texture2D" uid="uid://hab5k4bdp2nu" path="res://sprites/ayla_sprites/3.png" id="5_n0uho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i13bm"]
+
+[sub_resource type="Animation" id="Animation_jv6w4"]
+resource_name = "reveal"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.9116014, 0.9116014, 0.9116014, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 36), Vector2(245, 36)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ayla:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 244), Vector2(24.999985, 245)]
+}
+
+[sub_resource type="Animation" id="Animation_wktbu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(245, 36)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ayla:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28.000008, 244.00002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fa5yf"]
+_data = {
+&"RESET": SubResource("Animation_wktbu"),
+&"reveal": SubResource("Animation_jv6w4")
+}
+
+[node name="TelaInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jv6w4")
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 955.0
+offset_bottom = 500.0
+texture = ExtResource("2_wktbu")
+expand_mode = 2
+
+[node name="ayla" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = 244.0
+offset_right = 55.000854
+offset_bottom = 571.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_n0uho")
+stretch_mode = 2
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = 36.0
+offset_right = 120.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7484406, 0.7600001)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_fa5yf")
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_rc74i")
+text = "START"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_i13bm")
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("4_rc74i")
+text = "CREDITS"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_i13bm")
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_rc74i")
+text = "QUIT GAME"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_fa5yf")
+}
+autoplay = "reveal"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
