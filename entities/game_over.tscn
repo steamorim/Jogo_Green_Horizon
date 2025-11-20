@@ -58,7 +58,7 @@ tracks/0/path = NodePath("VBoxContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.1, 1.9666667),
+"times": PackedFloat32Array(0.7, 1.7333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -70,7 +70,7 @@ tracks/1/path = NodePath("TextureRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.1),
+"times": PackedFloat32Array(0, 0.6666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -82,7 +82,7 @@ tracks/2/path = NodePath("GameOver_Title:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.13, 1.98),
+"times": PackedFloat32Array(0.6666667, 1.6666666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -94,7 +94,7 @@ _data = {
 &"fade_in": SubResource("Animation_jh3t0")
 }
 
-[node name="GameOver" type="Control"]
+[node name="GameOverUI" type="Control"]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -161,11 +161,11 @@ text = "QUIT GAME"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_kr5fx")
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_qwxr1")
 }
-autoplay = "RESET"
 
 [connection signal="pressed" from="VBoxContainer/Restart_Btn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit_Btn" to="." method="_on_quit_btn_pressed"]

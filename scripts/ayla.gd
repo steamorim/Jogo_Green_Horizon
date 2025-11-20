@@ -73,6 +73,11 @@ func game_over():
 	# Ativa a tela de Game Over
 	game_over_instance.visible = true
 
+	# Toca a animação fade_in
+	var anim_player = game_over_instance.get_node_or_null("AnimationPlayer") 
+	if anim_player:
+		anim_player.play("fade_in")
+
 # -----------------------------
 # LOOP PRINCIPAL
 # -----------------------------

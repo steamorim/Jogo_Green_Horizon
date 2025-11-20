@@ -73,5 +73,3 @@ position = Vector2(730, 376)
 
 [node name="GameOverUI" parent="UILayer" instance=ExtResource("8_ll5lq")]
 visible = false
-offset_left = 947.0
-offset_right = 941.0
