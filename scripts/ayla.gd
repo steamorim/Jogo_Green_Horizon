@@ -122,13 +122,27 @@ func _update_animation(direction: float) -> void:
 # COLISÃO COM INIMIGO (HITBOX)
 # -----------------------------
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	var enemy = area.get_parent()
+	print("DEBUG: Hitbox tocou:", area.name)
 
-	if velocity.y > 0:
-		# jogador caiu no inimigo → mata o inimigo
-		if enemy:
-			enemy.queue_free()
-		velocity.y = JUMP_VELOCITY * 0.6  # bounce
-	else:
-		# jogador tocou no inimigo → morre
+	# LAVA DETECTADA
+	if area.is_in_group("lava"):
+		print("DEBUG: É lava → MORRE")
 		die()
+		return
+
+	# INIMIGO DETECTADO
+	var obj = area.get_parent()
+	if obj.is_in_group("enemy"):
+		if velocity.y > 0:
+			print("DEBUG: Matou inimigo")
+			obj.queue_free()
+			velocity.y = JUMP_VELOCITY * 0.6
+		else:
+			print("DEBUG: Morreu pelo inimigo")
+			die()
+		return
+
+	print("DEBUG: Não é lava nem inimigo")
+
+func _on_lava_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
