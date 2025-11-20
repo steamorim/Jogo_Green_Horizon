@@ -1,0 +1,171 @@
+[gd_scene load_steps=10 format=3 uid="uid://ldkfba6o4xje"]
+
+[ext_resource type="Script" uid="uid://b0h0mwc25hvsi" path="res://scripts/game_over.gd" id="1_cu1jw"]
+[ext_resource type="Texture2D" uid="uid://b2xlx52htm4vw" path="res://game_over/gameover.png" id="2_jh3t0"]
+[ext_resource type="Texture2D" uid="uid://dq18bb72e61cl" path="res://game_over/tela_gameover (2).jpg" id="2_kr5fx"]
+[ext_resource type="Theme" uid="uid://c6kd83q6srsbe" path="res://game_over/game_over.tres" id="3_jh3t0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jh3t0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kr5fx"]
+
+[sub_resource type="Animation" id="Animation_kr5fx"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.09),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver_Title:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jh3t0"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.1, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver_Title:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.13, 1.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwxr1"]
+_data = {
+&"RESET": SubResource("Animation_kr5fx"),
+&"fade_in": SubResource("Animation_jh3t0")
+}
+
+[node name="GameOver" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 950.0
+offset_top = -184.0
+offset_right = 944.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cu1jw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -957.0
+offset_top = 176.0
+offset_right = -18.0
+offset_bottom = 699.0
+texture = ExtResource("2_kr5fx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="GameOver_Title" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -729.0
+offset_top = 274.0
+offset_right = -249.0
+offset_bottom = 592.0
+texture = ExtResource("2_jh3t0")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -713.0
+offset_top = 203.0
+offset_right = -263.0
+offset_bottom = 847.0
+alignment = 1
+
+[node name="HSeparator7" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jh3t0")
+
+[node name="Restart_Btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_jh3t0")
+theme_override_font_sizes/font_size = 17
+text = "RESTART"
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jh3t0")
+
+[node name="Quit_Btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_jh3t0")
+text = "QUIT GAME"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kr5fx")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qwxr1")
+}
+autoplay = "RESET"
+
+[connection signal="pressed" from="VBoxContainer/Restart_Btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_Btn" to="." method="_on_quit_btn_pressed"]
