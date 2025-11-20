@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ban472dxw500j"]
+[gd_scene load_steps=17 format=4 uid="uid://ban472dxw500j"]
 
 [ext_resource type="Texture2D" uid="uid://be1f8terl1mpi" path="res://sprites/backgrounds/gelo.jpg" id="1_k3rdg"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_gvu0d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2xnywtltmq66" path="res://sprites/elementos/LIXOS1.png" id="5_3lkin"]
 [ext_resource type="Texture2D" uid="uid://1hg6avqj3dy2" path="res://sprites/elementos/LIXOS2.png" id="6_fqg47"]
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="8_fqg47"]
+[ext_resource type="PackedScene" uid="uid://bm7h6gna3i3v0" path="res://entities/inimigo_gelo.tscn" id="9_gtknu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lkin"]
 texture = ExtResource("2_u43q7")
@@ -114,3 +115,12 @@ position = Vector2(5.684342e-14, 1.0000076)
 scale = Vector2(2.4161654, 2.3894231)
 texture = ExtResource("8_fqg47")
 centered = false
+
+[node name="inimigo_gelo" parent="." instance=ExtResource("9_gtknu")]
+position = Vector2(235, 445)
+
+[node name="inimigo_gelo2" parent="." instance=ExtResource("9_gtknu")]
+position = Vector2(665, 444)
+
+[node name="inimigo_gelo3" parent="." instance=ExtResource("9_gtknu")]
+position = Vector2(697, 248)

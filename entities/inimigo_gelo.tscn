@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://bm7h6gna3i3v0"]
+
+[ext_resource type="Script" uid="uid://ds54erbpk5u5p" path="res://scripts/inimigo_gelo.gd" id="1_0l15c"]
+[ext_resource type="Texture2D" uid="uid://bvfaq4btqam0t" path="res://sprites/inimigo_gelo/10 - Bub/Squished (16 x 16).png" id="2_33k3m"]
+[ext_resource type="Texture2D" uid="uid://dpqj2uyl70erg" path="res://sprites/inimigo_gelo/10 - Bub/1.png" id="2_uhupe"]
+[ext_resource type="Texture2D" uid="uid://dnu1wamgbpyar" path="res://sprites/inimigo_gelo/10 - Bub/2.png" id="3_33k3m"]
+[ext_resource type="Texture2D" uid="uid://bybk6ewdq56or" path="res://sprites/inimigo_gelo/10 - Bub/3.png" id="4_hktox"]
+[ext_resource type="Texture2D" uid="uid://cc0pivd8kfwa" path="res://sprites/inimigo_gelo/10 - Bub/4.png" id="5_r68qy"]
+[ext_resource type="Texture2D" uid="uid://c765toepe4b5a" path="res://sprites/inimigo_gelo/10 - Bub/5.png" id="6_trxru"]
+[ext_resource type="Texture2D" uid="uid://cbvmw5jr3f1ld" path="res://sprites/inimigo_gelo/10 - Bub/6.png" id="7_wmvtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkndk"]
+size = Vector2(16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gki6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_33k3m")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uhupe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_33k3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hktox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r68qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_trxru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wmvtt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7knqy"]
+radius = 7.0
+
+[node name="inimigo_gelo" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_0l15c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_kkndk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(1.1875, 1.1875)
+sprite_frames = SubResource("SpriteFrames_2gki6")
+animation = &"dead"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7knqy")
+debug_color = Color(0.9721007, 0, 0.44667387, 0.41960785)
