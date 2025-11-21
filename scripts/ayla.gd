@@ -155,5 +155,5 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 	print("DEBUG: Não é lava nem inimigo")
 
-func _on_lava_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.y
+func _on_lava_area_body_entered(_body: Node2D) -> void:
+	die()

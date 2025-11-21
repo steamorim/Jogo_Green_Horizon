@@ -144,7 +144,7 @@ alignment = 1
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jh3t0")
 
-[node name="Restart_Btn" type="Button" parent="VBoxContainer"]
+[node name="restart_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_jh3t0")
 theme_override_font_sizes/font_size = 17
@@ -154,7 +154,7 @@ text = "RESTART"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jh3t0")
 
-[node name="Quit_Btn" type="Button" parent="VBoxContainer"]
+[node name="quit_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("3_jh3t0")
@@ -164,11 +164,12 @@ text = "QUIT GAME"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_kr5fx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="anim_player" type="AnimationPlayer" parent="."]
 process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_qwxr1")
 }
+autoplay = "RESET"
 
-[connection signal="pressed" from="VBoxContainer/Restart_Btn" to="." method="_on_restart_btn_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit_Btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

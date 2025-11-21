@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://crvurvifxwb2f"]
+[gd_scene load_steps=14 format=4 uid="uid://crvurvifxwb2f"]
 
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_ve786"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cgobvcjumxka7" path="res://scripts/hud.gd" id="10_ym5sv"]
 [ext_resource type="Texture2D" uid="uid://cfvc0jn1sfoqr" path="res://game_over/Vidas/vida.png" id="10_yq8tf"]
 [ext_resource type="PackedScene" uid="uid://b7vbu5sljy2ma" path="res://entities/portal_floresta.tscn" id="12_sng2h"]
+[ext_resource type="PackedScene" uid="uid://cpgnvxb16ev6i" path="res://entities/lixos.tscn" id="13_5g16k"]
 
 [node name="game" type="Node2D"]
 
@@ -43,6 +44,10 @@ tile_map_data = PackedByteArray("AAAAAA8AAAABAAMAAAAAABIAAAABAAQAAAAAABAAAAADAAU
 tile_set = ExtResource("2_ve786")
 
 [node name="Decoration" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AAAEAA0AAQAJAAEAAAAFAA0AAQAFAAEAAAASAAsAAQAJAAEAAAAUAAsAAQAFAAEAAAARAAwAAQABAAUAAAAOAAoAAQABAAUAAAACAA4AAQABAAUAAAAGAA4AAQABAAUAAAAEAA4AAQABAAUAAAASAAwAAwADAAAAAAAAAA4AAQADAAUAAAAFAA4AAwAAAAAAAAAPAAoAAwACAAAAAAAXAAgAAQABAAUAAAAbAAYAAQABAAUAAAAcAA4AAQABAAUAAAAfAAkAAQABAAUAAAAiAAkAAQABAAUAAAAgAAMAAQABAAUAAAAnAA4AAQABAAUAAAAgAA4AAQAHAAUAAAAjAA4AAQABAAUAAAAtAAsAAQABAAUAAAArAAsAAQABAAUAAAA5AAgAAQADAAUAAAAeAA4AAQAFAAUAAAAfAA4AAQAGAAUAAAAiAAgAAgABAAEAAAAuAAQAAwAAAAAAAAAiAAMAAwACAAAAAAAhAA4AAwADAAAAAAAWAAgAAwABAAAAAAAhAAIAAQAFAAEAAAAsAAoAAQAFAAEAAAAgAA0AAQAFAAEAAAAOAAkAAQAFAAEAAAAIAAwAAQAFAAEAAAAIAA0AAwABAAAAAAAJAAwAAQAJAAEAAAAXAAwAAQABAAUAAAAYAAsAAQAJAAEAAAAZAAwAAQABAAUAAAAzAAgAAwADAAAAAAA0AAgAAQAFAAUAAAA1AAgAAQAGAAUAAAA2AAcAAQAFAAEAAAA2AAgAAQAHAAUAAAA3AAgAAQABAAUAAAA4AAgAAQABAAUAAAAvAAMAAgABAAEAAAA=")
+tile_set = ExtResource("3_33cqm")
+
+[node name="2" type="TileMapLayer" parent="Tiles"]
 tile_map_data = PackedByteArray("AAAEAA0AAQAJAAEAAAAFAA0AAQAFAAEAAAASAAsAAQAJAAEAAAAUAAsAAQAFAAEAAAARAAwAAQABAAUAAAAOAAoAAQABAAUAAAACAA4AAQABAAUAAAAGAA4AAQABAAUAAAAEAA4AAQABAAUAAAASAAwAAwADAAAAAAAAAA4AAQADAAUAAAAFAA4AAwAAAAAAAAAPAAoAAwACAAAAAAAXAAgAAQABAAUAAAAbAAYAAQABAAUAAAAcAA4AAQABAAUAAAAfAAkAAQABAAUAAAAiAAkAAQABAAUAAAAgAAMAAQABAAUAAAAnAA4AAQABAAUAAAAgAA4AAQAHAAUAAAAjAA4AAQABAAUAAAAtAAsAAQABAAUAAAArAAsAAQABAAUAAAA5AAgAAQADAAUAAAAeAA4AAQAFAAUAAAAfAA4AAQAGAAUAAAAiAAgAAgABAAEAAAAuAAQAAwAAAAAAAAAiAAMAAwACAAAAAAAhAA4AAwADAAAAAAAWAAgAAwABAAAAAAAhAAIAAQAFAAEAAAAsAAoAAQAFAAEAAAAgAA0AAQAFAAEAAAAOAAkAAQAFAAEAAAAIAAwAAQAFAAEAAAAIAA0AAwABAAAAAAAJAAwAAQAJAAEAAAAXAAwAAQABAAUAAAAYAAsAAQAJAAEAAAAZAAwAAQABAAUAAAAzAAgAAwADAAAAAAA0AAgAAQAFAAUAAAA1AAgAAQAGAAUAAAA2AAcAAQAFAAEAAAA2AAgAAQAHAAUAAAA3AAgAAQABAAUAAAA4AAgAAQABAAUAAAAvAAMAAgABAAEAAAA=")
 tile_set = ExtResource("3_33cqm")
 
@@ -106,3 +111,51 @@ texture = ExtResource("10_yq8tf")
 [node name="portal_floresta" parent="." instance=ExtResource("12_sng2h")]
 position = Vector2(804.00006, 215)
 scale = Vector2(0.15, 0.15)
+
+[node name="portal_floresta2" parent="." instance=ExtResource("12_sng2h")]
+position = Vector2(804.00006, 215)
+scale = Vector2(0.15, 0.15)
+
+[node name="portal_floresta3" parent="." instance=ExtResource("12_sng2h")]
+position = Vector2(804.00006, 215)
+scale = Vector2(0.15, 0.15)
+
+[node name="lixos_grupo" type="Node2D" parent="."]
+visibility_layer = 8
+z_index = 4
+
+[node name="Lixos" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(118, 428)
+
+[node name="Lixos2" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(228, 365)
+
+[node name="Lixos3" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(99, 428)
+
+[node name="Lixos4" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(321, 333)
+
+[node name="Lixos5" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(361, 396)
+
+[node name="Lixos6" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(504, 256)
+
+[node name="Lixos7" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(601, 429)
+
+[node name="Lixos8" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(474, 430)
+
+[node name="Lixos9" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(752, 384)
+
+[node name="Lixos10" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(724, 268)
+
+[node name="Lixos11" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(788, 351)
+
+[node name="Lixos12" parent="lixos_grupo" instance=ExtResource("13_5g16k")]
+position = Vector2(7891, 7783)
