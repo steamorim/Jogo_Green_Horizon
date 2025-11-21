@@ -49,7 +49,8 @@ texture = ExtResource("1_jtj14")
 13:3/0 = 0
 13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:3/0 = 0
-15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.9892225, -8, -0.62950516)
+15:3/0/physics_layer_0/polygon_0/one_way = true
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
@@ -81,6 +82,15 @@ texture = ExtResource("1_jtj14")
 5:6/0 = 0
 5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:8/0 = 0
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.08992958, 8, -0.2697878, 8, 8, -8, 8)
+8:7/0/physics_layer_0/polygon_0/one_way = true
+9:7/0 = 0
+9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.62950516, 0.9892225, -0.62950516, 1.1690817, 8, -8, 8)
+9:7/0/physics_layer_0/polygon_0/one_way = true
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.08992958, -0.62950516, 8, -0.62950516, 8, 8, -0.08992958, 8)
+7:7/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2wv8"]
 texture = ExtResource("2_selcm")
@@ -121,6 +131,13 @@ texture = ExtResource("2_selcm")
 4:6/0 = 0
 5:6/0 = 0
 4:8/0 = 0
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.6295061, -8, 8, -8, 8, 8, -0.44964695, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0/physics_layer_0/polygon_0/one_way = true
+9:7/0 = 0
+9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.8093643, -8, 1.3489399, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1yuku"]
 texture = ExtResource("3_4mtcj")

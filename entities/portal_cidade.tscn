@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=3 uid="uid://dun4xg14qbif3"]
+
+[ext_resource type="Script" uid="uid://bhfvtr1hco4m2" path="res://scripts/portal_cidade.gd" id="1_sfdc1"]
+[ext_resource type="Texture2D" uid="uid://de4iid10isswt" path="res://sprites/elementos/portal_cidade.png" id="2_oxmt6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cfbuk"]
+radius = 83.0
+height = 272.0
+
+[sub_resource type="Animation" id="Animation_7ou64"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.56666666, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.91, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.85882354), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xc462"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lqgcg"]
+_data = {
+&"RESET": SubResource("Animation_xc462"),
+&"fade_out": SubResource("Animation_7ou64")
+}
+
+[node name="portal_cidade" type="Area2D"]
+script = ExtResource("1_sfdc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oxmt6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, -84)
+shape = SubResource("CapsuleShape2D_cfbuk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 932.0
+offset_bottom = 512.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_lqgcg")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
