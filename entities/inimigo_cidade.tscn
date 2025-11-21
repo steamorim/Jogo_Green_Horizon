@@ -39,7 +39,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4eisp"]
 height = 20.0
 
-[node name="inimigo_cidade" type="CharacterBody2D"]
+[node name="inimigo_cidade" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 script = ExtResource("1_mowdb")
 

@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c6kd83q6srsbe"]
+
+[ext_resource type="FontFile" uid="uid://c1x2nx0oi38yc" path="res://scene/tela_inicial/PressStart2P-vaV7.ttf" id="1_ij2im"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kr5fx"]
+bg_color = Color(0.9882353, 0.6745098, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwxr1"]
+bg_color = Color(0.9882353, 0.6745098, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf76h"]
+bg_color = Color(0.9999998, 0.5248544, 0.18306357, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.88604325, 0.46899986, 0.09439843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m01mb"]
+bg_color = Color(0.9847978, 0.53954005, 0.12958524, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9775215, 0.53219515, 0.1953628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu7yp"]
+bg_color = Color(0.99607843, 0.69803923, 0.33333334, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7922907, 0.429676, 0.043981142, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k721u"]
+bg_color = Color(1, 0.6392157, 0.30980393, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85983115, 0.43784964, 5.7756904e-07, 1)
+
+[resource]
+default_font = ExtResource("1_ij2im")
+default_font_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_kr5fx")
+Button/styles/focus = SubResource("StyleBoxFlat_qwxr1")
+Button/styles/hover = SubResource("StyleBoxFlat_jf76h")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_m01mb")
+Button/styles/normal = SubResource("StyleBoxFlat_eu7yp")
+Button/styles/pressed = SubResource("StyleBoxFlat_k721u")

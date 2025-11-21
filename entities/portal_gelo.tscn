@@ -1,0 +1,173 @@
+[gd_scene load_steps=7 format=3 uid="uid://rcy161w6vut6"]
+
+[ext_resource type="Texture2D" uid="uid://ja6v5wcbaofi" path="res://sprites/elementos/portal_gelo.png" id="2_wu011"]
+
+[sub_resource type="GDScript" id="GDScript_rmsvd"]
+script/source = "# Script: portal.gd
+extends Area2D
+
+@export var proxima_fase: String = \"res://scene/fase3_deserto.tscn\"
+
+@onready var transicao_anim: AnimationPlayer = $CanvasLayer/AnimationPlayer
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect # O nó que fica preto
+@onready var player_node: CharacterBody2D = null
+
+
+func _ready():
+	# Garante o estado inicial (Transparente e Visível)
+	if is_instance_valid(color_rect):
+		color_rect.visible = true
+		color_rect.modulate = Color(1, 1, 1, 0.0)
+		
+	await get_tree().physics_frame
+	monitoring = true
+
+
+func _on_body_entered(body: Node2D) -> void:
+	
+	print(\"LOG COLISÃO: Sinal body_entered disparado por: \", body.name)
+	
+	if body is CharacterBody2D:
+		player_node = body
+		print(\"LOG DIAG: Personagem Ayla detectado.\")
+		
+		# 🛑 LINHA REMOVIDA: player_node.process_mode = Node.PROCESS_MODE_DISABLED
+		# O movimento do personagem não será travado.
+		print(\"LOG DIAG: Movimento do personagem NÃO está travado (CONTINUA SE MOVENDO).\")
+			
+		if is_instance_valid(color_rect):
+			# Reforça a visibilidade do elemento que será animado
+			color_rect.visible = true
+			print(\"LOG DIAG: ColorRect visível definido como TRUE.\")
+		else:
+			push_error(\"LOG ERRO CRÍTICO: ColorRect é inválido! A transição não pode aparecer.\")
+			
+		
+		# Início da Lógica da Animação
+		if transicao_anim:
+			print(\"LOG DIAG: AnimationPlayer encontrado.\")
+			
+			if transicao_anim.has_animation(\"fade_out\"):
+				print(\"LOG DIAG: Animação 'fade_out' encontrada no Player.\")
+				
+				# ATIVAÇÃO EXPLÍCITA DO PLAYER
+				transicao_anim.active = true
+				print(\"LOG DIAG: AnimationPlayer ativo = TRUE.\")
+				
+				# Inicia a animação de fade out.
+				transicao_anim.play(\"fade_out\")
+				print(\"LOG DIAG: Animação 'fade_out' INICIADA. Aguardando a conclusão...\")
+				
+				# O jogo trava AQUI pelo tempo da animação (1.5s)
+				await transicao_anim.animation_finished
+				print(\"LOG SUCESSO: Animação concluída. A tela ficou preta.\")
+			else:
+				push_error(\"LOG ERRO: Animação 'fade_out' não existe. Verifique o nome da animação.\")
+				
+		else:
+			push_error(\"LOG ERRO CRÍTICO: AnimationPlayer é inválido! A transição foi pulada.\")
+		
+		# Mudança de cena
+		print(\"LOG MUDANÇA: Tentando mudar para a fase: \", proxima_fase)
+		var erro = get_tree().change_scene_to_file(proxima_fase)
+		
+		if erro != OK:
+			push_error(\"LOG ERRO CRÍTICO: Falha ao carregar fase: \", proxima_fase, \" Erro: \", erro)
+		else:
+			print(\"LOG MUDANÇA: Transição de cena bem-sucedida!\")
+	else:
+		print(\"LOG AVISO: Colisão ignorada. Não é a personagem Ayla.\")
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyc6h"]
+radius = 76.0
+height = 272.0
+
+[sub_resource type="Animation" id="Animation_2l8gk"]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.02, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.8352941), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w68op"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.46666667, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.8745098), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ymjta"]
+_data = {
+&"RESET": SubResource("Animation_2l8gk"),
+&"fade_out": SubResource("Animation_w68op")
+}
+
+[node name="portal_gelo" type="Area2D"]
+monitoring = false
+monitorable = false
+script = SubResource("GDScript_rmsvd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wu011")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, -60)
+shape = SubResource("CapsuleShape2D_tyc6h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 0)
+offset_right = 921.0
+offset_bottom = 515.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_ymjta")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -72,14 +72,6 @@ sprite_frames = SubResource("SpriteFrames_m3hxc")
 animation = &"idle"
 flip_h = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
-limit_left = 0
-limit_top = 0
-limit_right = 1800
-limit_bottom = 500
-position_smoothing_enabled = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7u0sy")
 
