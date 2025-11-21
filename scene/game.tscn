@@ -50,6 +50,7 @@ tile_set = ExtResource("3_33cqm")
 position = Vector2(21, 425)
 
 [node name="Camera2D" parent="Ayla" instance=ExtResource("6_17rxn")]
+position = Vector2(1, 0)
 limit_right = 920
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]

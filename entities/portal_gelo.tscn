@@ -88,11 +88,11 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
+tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.56666666, 1.5),
+"times": PackedFloat32Array(0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -100,14 +100,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
+tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 0.77, 1.5),
+"times": PackedFloat32Array(0, 1.02, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.83137256), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.8352941), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_w68op"]
@@ -160,8 +160,7 @@ shape = SubResource("CapsuleShape2D_tyc6h")
 layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0, 0, 0, 0)
 offset_right = 921.0
 offset_bottom = 515.0
 color = Color(0, 0, 0, 0)
