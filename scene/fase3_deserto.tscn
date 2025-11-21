@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b34n4uyemjgsq"]
+[gd_scene load_steps=25 format=4 uid="uid://b34n4uyemjgsq"]
 
 [ext_resource type="Texture2D" uid="uid://dpng31refsio3" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="1_8se6o"]
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_21w8a"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="7_8se6o"]
 [ext_resource type="PackedScene" uid="uid://bfisqx533kbqa" path="res://entities/inimigo_deserto.tscn" id="8_oswql"]
 [ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="9_1g413"]
+[ext_resource type="Texture2D" uid="uid://cfvc0jn1sfoqr" path="res://game_over/Vidas/vida.png" id="11_5u2lg"]
+[ext_resource type="Script" uid="uid://cgobvcjumxka7" path="res://scripts/hud.gd" id="11_qaehb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oswql"]
 texture = ExtResource("1_8se6o")
@@ -319,6 +321,7 @@ region_rect = Rect2(0, 0, 864, 416)
 position = Vector2(28, 420)
 
 [node name="Camera2D" parent="Ayla" instance=ExtResource("7_3ha5r")]
+limit_right = 1900
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
@@ -345,5 +348,26 @@ position = Vector2(701, 470)
 
 [node name="GameOverUI" parent="UILayer" instance=ExtResource("9_1g413")]
 visible = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+script = ExtResource("11_qaehb")
+
+[node name="VidasContainer" type="HBoxContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vida1" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("11_5u2lg")
+
+[node name="Vida2" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("11_5u2lg")
+
+[node name="Vida3" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("11_5u2lg")
 
 [connection signal="body_entered" from="Tiles/TileMapLayer/LavaArea" to="Ayla" method="_on_lava_area_body_entered"]

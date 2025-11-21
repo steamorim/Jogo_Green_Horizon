@@ -1,17 +1,23 @@
 extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+# 🚨 Referência para o nó HUD, que tem o script hud.gd
+@onready var hud = get_parent().get_node("HUD") 
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 
 var is_dead: bool = false
 var origin_position: Vector2
-var lives: int = 3   # ← Três vidas
+var lives: int = 3 # ← Três vidas
 
 func _ready():
 	# Salva a posição inicial do jogador
 	origin_position = global_position
+	
+	# 🚨 Inicializa o HUD com o número correto de vidas
+	if is_instance_valid(hud):
+		hud.atualizar_vidas(lives)
 
 # -----------------------------
 # FUNÇÃO DE MORTE DO JOGADOR
@@ -30,6 +36,10 @@ func die():
 	# Remove uma vida
 	lives -= 1
 	print("Vidas restantes: ", lives)
+	
+	# 🚨 ATUALIZA O HUD
+	if is_instance_valid(hud):
+		hud.atualizar_vidas(lives)
 
 	if lives > 0:
 		# Volta ao início
@@ -43,7 +53,7 @@ func die():
 		game_over()
 
 # -----------------------------
-# GAME OVER
+# GAME OVER (MANTIDO)
 # -----------------------------
 func game_over():
 	print("GAME OVER!")
@@ -52,8 +62,12 @@ func game_over():
 	is_dead = true
 	velocity = Vector2.ZERO
 
-	# Obtém o CanvasLayer (crie um na cena principal e chame de "UILayer")
+	# Obtém o CanvasLayer (Mantenha o nome exato do seu nó CanvasLayer!)
 	var ui_layer = get_tree().current_scene.get_node("UILayer")
+
+	if not is_instance_valid(ui_layer):
+		push_error("Nó UILayer não encontrado. Certifique-se de que ele existe na cena raiz.")
+		return
 
 	# Checa se já existe uma instância do Game Over
 	var game_over_instance = ui_layer.get_node_or_null("GameOverUI")
@@ -66,20 +80,19 @@ func game_over():
 
 		# Configura para ocupar a tela inteira se for Control
 		if game_over_instance is Control:
-			game_over_instance.rect_size = get_viewport().get_visible_rect().size
-			game_over_instance.rect_position = Vector2.ZERO
+			game_over_instance.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT) # Forma Godot 4 de preencher a tela
 			game_over_instance.visible = false  # começa invisível
 
 	# Ativa a tela de Game Over
 	game_over_instance.visible = true
 
 	# Toca a animação fade_in
-	var anim_player = game_over_instance.get_node_or_null("AnimationPlayer") 
+	var anim_player = game_over_instance.get_node_or_null("AnimationPlayer")
 	if anim_player:
-		anim_player.play("fade_in")
-
+		# 🚨 Use o nome EXATO da sua animação de Game Over
+		anim_player.play("fade_in") 
 # -----------------------------
-# LOOP PRINCIPAL
+# LOOP PRINCIPAL (MANTIDO)
 # -----------------------------
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -104,9 +117,8 @@ func _physics_process(delta: float) -> void:
 
 	_update_animation(direction)
 	move_and_slide()
-
 # -----------------------------
-# SISTEMA DE ANIMAÇÃO
+# SISTEMA DE ANIMAÇÃO (MANTIDO)
 # -----------------------------
 func _update_animation(direction: float) -> void:
 	if direction > 0:
@@ -117,9 +129,8 @@ func _update_animation(direction: float) -> void:
 		anim.play("lado")
 	else:
 		anim.play("idle")
-
 # -----------------------------
-# COLISÃO COM INIMIGO (HITBOX)
+# COLISÃO COM INIMIGO (HITBOX) (MANTIDO)
 # -----------------------------
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	print("DEBUG: Hitbox tocou:", area.name)
@@ -145,4 +156,4 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	print("DEBUG: Não é lava nem inimigo")
 
 func _on_lava_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass # Replace with function body.y

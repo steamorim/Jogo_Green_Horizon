@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bycdxwo1jnol8"]
+[gd_scene load_steps=25 format=4 uid="uid://bycdxwo1jnol8"]
 
 [ext_resource type="Texture2D" uid="uid://qnkr25u2ya2t" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Bubbling_Oil_frames (16 x 32).png" id="1_bo3mb"]
 [ext_resource type="Texture2D" uid="uid://nw5g5hs1tj20" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_ksbtv"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="9_o8ucq"]
 [ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="10_hc3pa"]
 [ext_resource type="PackedScene" uid="uid://b83wu4fbpuhrf" path="res://entities/inimigo_cidade.tscn" id="10_uo4p3"]
+[ext_resource type="Script" uid="uid://cgobvcjumxka7" path="res://scripts/hud.gd" id="12_smoex"]
+[ext_resource type="Texture2D" uid="uid://cfvc0jn1sfoqr" path="res://game_over/Vidas/vida.png" id="13_ss8to"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_smoex"]
 texture = ExtResource("3_cgxv3")
@@ -221,3 +223,24 @@ position = Vector2(1115, 260)
 
 [node name="GameOverUI" parent="UILayer" instance=ExtResource("10_hc3pa")]
 visible = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+script = ExtResource("12_smoex")
+
+[node name="VidasContainer" type="HBoxContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vida1" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("13_ss8to")
+
+[node name="Vida2" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("13_ss8to")
+
+[node name="Vida3" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("13_ss8to")

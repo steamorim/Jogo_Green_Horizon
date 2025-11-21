@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://msu0h032mrli"
-path="res://.godot/imported/tela_gameover.jpg-68ea5f83a90e58a787bb2f43f9da9552.ctex"
+uid="uid://cfvc0jn1sfoqr"
+path="res://.godot/imported/vida.png-6a2273f46e0f626fc3e86698d3e2f98c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_over/tela_gameover.jpg"
-dest_files=["res://.godot/imported/tela_gameover.jpg-68ea5f83a90e58a787bb2f43f9da9552.ctex"]
+source_file="res://game_over/Vidas/vida.png"
+dest_files=["res://.godot/imported/vida.png-6a2273f46e0f626fc3e86698d3e2f98c.ctex"]
 
 [params]
 

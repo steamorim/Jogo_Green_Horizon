@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ban472dxw500j"]
+[gd_scene load_steps=21 format=4 uid="uid://ban472dxw500j"]
 
 [ext_resource type="Texture2D" uid="uid://be1f8terl1mpi" path="res://sprites/backgrounds/gelo.jpg" id="1_k3rdg"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_gvu0d"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cq0mrvtmseigu" path="res://entities/camera_2d.tscn" id="8_o0dgr"]
 [ext_resource type="PackedScene" uid="uid://bm7h6gna3i3v0" path="res://entities/inimigo_gelo.tscn" id="9_gtknu"]
 [ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="10_rka3j"]
+[ext_resource type="Script" uid="uid://cgobvcjumxka7" path="res://scripts/hud.gd" id="12_d07uc"]
+[ext_resource type="Texture2D" uid="uid://cfvc0jn1sfoqr" path="res://game_over/Vidas/vida.png" id="13_r7bg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lkin"]
 texture = ExtResource("2_u43q7")
@@ -136,3 +138,24 @@ position = Vector2(697, 248)
 visible = false
 offset_left = 947.0
 offset_right = 941.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+script = ExtResource("12_d07uc")
+
+[node name="VidasContainer" type="HBoxContainer" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Vida1" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("13_r7bg5")
+
+[node name="Vida2" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("13_r7bg5")
+
+[node name="Vida3" type="TextureRect" parent="HUD/VidasContainer"]
+layout_mode = 2
+texture = ExtResource("13_r7bg5")
