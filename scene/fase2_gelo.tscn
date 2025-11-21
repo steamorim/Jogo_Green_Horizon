@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ban472dxw500j"]
+[gd_scene load_steps=19 format=4 uid="uid://ban472dxw500j"]
 
 [ext_resource type="Texture2D" uid="uid://be1f8terl1mpi" path="res://sprites/backgrounds/gelo.jpg" id="1_k3rdg"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_gvu0d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2xnywtltmq66" path="res://sprites/elementos/LIXOS1.png" id="5_3lkin"]
 [ext_resource type="Texture2D" uid="uid://1hg6avqj3dy2" path="res://sprites/elementos/LIXOS2.png" id="6_fqg47"]
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="8_fqg47"]
+[ext_resource type="PackedScene" uid="uid://cq0mrvtmseigu" path="res://entities/camera_2d.tscn" id="8_o0dgr"]
 [ext_resource type="PackedScene" uid="uid://bm7h6gna3i3v0" path="res://entities/inimigo_gelo.tscn" id="9_gtknu"]
 [ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="10_rka3j"]
 
@@ -104,6 +105,9 @@ tile_set = SubResource("TileSet_7r53g")
 
 [node name="Ayla" parent="." instance=ExtResource("4_u6ulp")]
 position = Vector2(23, 421)
+
+[node name="Camera2D" parent="Ayla" instance=ExtResource("8_o0dgr")]
+limit_right = 920
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 

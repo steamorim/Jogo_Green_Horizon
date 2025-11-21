@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bycdxwo1jnol8"]
+[gd_scene load_steps=23 format=4 uid="uid://bycdxwo1jnol8"]
 
 [ext_resource type="Texture2D" uid="uid://qnkr25u2ya2t" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Bubbling_Oil_frames (16 x 32).png" id="1_bo3mb"]
 [ext_resource type="Texture2D" uid="uid://nw5g5hs1tj20" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_ksbtv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://wtnbm6gvnrsn" path="res://sprites/backgrounds/cidade.jpg" id="3_yitps"]
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="4_6j7gl"]
 [ext_resource type="Texture2D" uid="uid://cyh5jx2ii0mtw" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Snack_machine_Bench_Trash_bin (16 x 16).png" id="4_cgxv3"]
+[ext_resource type="PackedScene" uid="uid://cq0mrvtmseigu" path="res://entities/camera_2d.tscn" id="8_hc3pa"]
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="9_o8ucq"]
 [ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="10_hc3pa"]
 [ext_resource type="PackedScene" uid="uid://b83wu4fbpuhrf" path="res://entities/inimigo_cidade.tscn" id="10_uo4p3"]
@@ -189,6 +190,8 @@ centered = false
 
 [node name="Ayla" parent="." instance=ExtResource("4_6j7gl")]
 position = Vector2(12, 432)
+
+[node name="Camera2D" parent="Ayla" instance=ExtResource("8_hc3pa")]
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 

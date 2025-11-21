@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://crvurvifxwb2f"]
+[gd_scene load_steps=10 format=4 uid="uid://crvurvifxwb2f"]
 
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_ve786"]
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="2_xlg7c"]
 [ext_resource type="TileSet" uid="uid://b2g0x6ckmvyfw" path="res://scene/decoration.tres" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://b0k3o25u5lmes" path="res://sprites/backgrounds/florestaa.jpg" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://cq0mrvtmseigu" path="res://entities/camera_2d.tscn" id="6_17rxn"]
 [ext_resource type="Texture2D" uid="uid://b2q7brcmxsnqm" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="6_qpk70"]
 [ext_resource type="PackedScene" uid="uid://u3lj0f7kk3vd" path="res://entities/inimigo_floresta.tscn" id="7_qpk70"]
 [ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="8_ll5lq"]
@@ -45,6 +46,9 @@ tile_set = ExtResource("3_33cqm")
 [node name="Ayla" parent="." instance=ExtResource("1_5kiuu")]
 position = Vector2(21, 425)
 
+[node name="Camera2D" parent="Ayla" instance=ExtResource("6_17rxn")]
+limit_right = 920
+
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 visible = false
 
@@ -67,7 +71,7 @@ position = Vector2(240, 391)
 position = Vector2(546, 346)
 
 [node name="inimigo_floresta3" parent="." instance=ExtResource("7_qpk70")]
-position = Vector2(730, 376)
+position = Vector2(868, 327)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
