@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ban472dxw500j"]
+[gd_scene load_steps=24 format=4 uid="uid://ban472dxw500j"]
 
 [ext_resource type="Texture2D" uid="uid://be1f8terl1mpi" path="res://sprites/backgrounds/gelo.jpg" id="1_k3rdg"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_gvu0d"]
@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c5b2y63xsk66b" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="8_fqg47"]
 [ext_resource type="PackedScene" uid="uid://cq0mrvtmseigu" path="res://entities/camera_2d.tscn" id="8_o0dgr"]
 [ext_resource type="PackedScene" uid="uid://bm7h6gna3i3v0" path="res://entities/inimigo_gelo.tscn" id="9_gtknu"]
-[ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="10_rka3j"]
 [ext_resource type="Script" uid="uid://cgobvcjumxka7" path="res://scripts/hud.gd" id="12_d07uc"]
 [ext_resource type="Texture2D" uid="uid://cfvc0jn1sfoqr" path="res://game_over/Vidas/vida.png" id="13_r7bg5"]
 [ext_resource type="PackedScene" uid="uid://rcy161w6vut6" path="res://entities/portal_gelo.tscn" id="14_r7bg5"]
+[ext_resource type="PackedScene" path="res://entities/lixos.tscn" id="15_nv1ou"]
+[ext_resource type="PackedScene" path="res://entities/radiacao.tscn" id="16_lo1co"]
+[ext_resource type="PackedScene" uid="uid://d0obxmaa8g28m" path="res://Hud_progresso.tscn" id="17_av4m7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lkin"]
 texture = ExtResource("2_u43q7")
@@ -133,21 +135,15 @@ position = Vector2(665, 444)
 [node name="inimigo_gelo3" parent="." instance=ExtResource("9_gtknu")]
 position = Vector2(697, 248)
 
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="GameOverUI" parent="UILayer" instance=ExtResource("10_rka3j")]
-visible = false
-offset_left = 947.0
-offset_right = 941.0
-
 [node name="HUD" type="CanvasLayer" parent="."]
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 script = ExtResource("12_d07uc")
 
-[node name="VidasContainer" type="HBoxContainer" parent="HUD"]
+[node name="VidasContainer" type="BoxContainer" parent="HUD"]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
 
 [node name="Vida1" type="TextureRect" parent="HUD/VidasContainer"]
 layout_mode = 2
@@ -164,3 +160,45 @@ texture = ExtResource("13_r7bg5")
 [node name="portal_gelo" parent="." instance=ExtResource("14_r7bg5")]
 position = Vector2(136, 146)
 scale = Vector2(0.15, 0.15)
+
+[node name="lixos_grupo" type="Node2D" parent="."]
+
+[node name="Lixos" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(601, 447)
+
+[node name="Lixos2" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(488, 286)
+
+[node name="Lixos3" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(909, 255)
+
+[node name="Lixos4" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(679, 398)
+
+[node name="Lixos5" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(317, 319)
+
+[node name="Lixos6" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(392, 432)
+
+[node name="Lixos7" parent="lixos_grupo" instance=ExtResource("15_nv1ou")]
+position = Vector2(199, 447)
+
+[node name="poluicoes" type="Node2D" parent="."]
+
+[node name="Radiacao" parent="poluicoes" instance=ExtResource("16_lo1co")]
+position = Vector2(665, 396)
+
+[node name="Radiacao2" parent="poluicoes" instance=ExtResource("16_lo1co")]
+position = Vector2(896, 253)
+
+[node name="Radiacao3" parent="poluicoes" instance=ExtResource("16_lo1co")]
+position = Vector2(326, 316)
+
+[node name="Radiacao4" parent="poluicoes" instance=ExtResource("16_lo1co")]
+position = Vector2(655, 396)
+
+[node name="Radiacao5" parent="poluicoes" instance=ExtResource("16_lo1co")]
+position = Vector2(208, 445)
+
+[node name="Hud_progresso" parent="." instance=ExtResource("17_av4m7")]

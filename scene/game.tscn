@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://crvurvifxwb2f"]
+[gd_scene load_steps=15 format=4 uid="uid://crvurvifxwb2f"]
 
 [ext_resource type="PackedScene" uid="uid://cjlmosu27ht6m" path="res://entities/ayla.tscn" id="1_5kiuu"]
 [ext_resource type="TileSet" uid="uid://bh5jiuekq05gx" path="res://tiles/terrain.tres" id="2_ve786"]
@@ -8,13 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cq0mrvtmseigu" path="res://entities/camera_2d.tscn" id="6_17rxn"]
 [ext_resource type="Texture2D" uid="uid://b2q7brcmxsnqm" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="6_qpk70"]
 [ext_resource type="PackedScene" uid="uid://u3lj0f7kk3vd" path="res://entities/inimigo_floresta.tscn" id="7_qpk70"]
-[ext_resource type="PackedScene" uid="uid://ldkfba6o4xje" path="res://entities/game_over.tscn" id="8_ll5lq"]
 [ext_resource type="Script" uid="uid://cgobvcjumxka7" path="res://scripts/hud.gd" id="10_ym5sv"]
 [ext_resource type="Texture2D" uid="uid://cfvc0jn1sfoqr" path="res://game_over/Vidas/vida.png" id="10_yq8tf"]
 [ext_resource type="PackedScene" uid="uid://b7vbu5sljy2ma" path="res://entities/portal_floresta.tscn" id="12_sng2h"]
-[ext_resource type="PackedScene" uid="uid://cpgnvxb16ev6i" path="res://entities/lixos.tscn" id="13_5g16k"]
-[ext_resource type="PackedScene" uid="uid://b2om62w8r5rj4" path="res://entities/radiacao.tscn" id="14_81276"]
-[ext_resource type="PackedScene" uid="uid://cksnoghs227tv" path="res://Hud_progresso.tscn" id="15_ve786"]
+[ext_resource type="PackedScene" path="res://entities/lixos.tscn" id="13_5g16k"]
+[ext_resource type="PackedScene" path="res://entities/radiacao.tscn" id="14_81276"]
+[ext_resource type="PackedScene" uid="uid://d0obxmaa8g28m" path="res://Hud_progresso.tscn" id="15_ve786"]
 
 [node name="game" type="Node2D"]
 
@@ -80,26 +79,26 @@ position = Vector2(546, 346)
 [node name="inimigo_floresta3" parent="." instance=ExtResource("7_qpk70")]
 position = Vector2(868, 327)
 
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="GameOverUI" parent="UILayer" instance=ExtResource("8_ll5lq")]
-visible = false
-mouse_filter = 0
-
 [node name="HUD" type="CanvasLayer" parent="."]
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 script = ExtResource("10_ym5sv")
 
 [node name="VidasContainer" type="HBoxContainer" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -30.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 
-[node name="Vida1" type="TextureRect" parent="HUD/VidasContainer"]
+[node name="Vida2" type="TextureRect" parent="HUD/VidasContainer"]
 layout_mode = 2
 texture = ExtResource("10_yq8tf")
 
-[node name="Vida2" type="TextureRect" parent="HUD/VidasContainer"]
+[node name="Vida1" type="TextureRect" parent="HUD/VidasContainer"]
 layout_mode = 2
 texture = ExtResource("10_yq8tf")
 

@@ -1,0 +1,168 @@
+[gd_scene load_steps=9 format=3 uid="uid://6gclgmpacgbd"]
+
+[ext_resource type="Script" uid="uid://bng5h0nl0l5lv" path="res://scripts/game_over_screen.gd" id="1_bkrdj"]
+[ext_resource type="Texture2D" uid="uid://dq18bb72e61cl" path="res://game_over/tela_gameover (2).jpg" id="2_tbfpy"]
+[ext_resource type="Texture2D" uid="uid://b2xlx52htm4vw" path="res://game_over/gameover.png" id="3_baini"]
+[ext_resource type="StyleBox" uid="uid://bnef62d7uaqnp" path="res://game_over/new_style_box_empty.tres" id="4_6gti5"]
+[ext_resource type="Theme" uid="uid://c6kd83q6srsbe" path="res://game_over/game_over.tres" id="5_vhl53"]
+
+[sub_resource type="Animation" id="Animation_bkrdj"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 0.8901961), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.3666667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tbfpy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOver:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_baini"]
+_data = {
+&"RESET": SubResource("Animation_tbfpy"),
+&"fade_in": SubResource("Animation_bkrdj")
+}
+
+[node name="GameOverScreen" type="CanvasLayer"]
+process_mode = 3
+layer = 300
+
+[node name="GameOverScreen" type="Control" parent="."]
+z_index = 150
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bkrdj")
+
+[node name="TextureRect" type="TextureRect" parent="GameOverScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tbfpy")
+expand_mode = 1
+
+[node name="GameOver" type="TextureRect" parent="GameOverScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 204.0
+offset_top = 107.0
+offset_right = 757.0
+offset_bottom = 340.0
+texture = ExtResource("3_baini")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = -120.0
+offset_right = 254.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = ExtResource("4_6gti5")
+
+[node name="Restart" type="Button" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_vhl53")
+theme_override_font_sizes/font_size = 17
+text = "RESTART"
+
+[node name="HSeparator2" type="HSeparator" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = ExtResource("4_6gti5")
+
+[node name="Quit" type="Button" parent="GameOverScreen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_vhl53")
+theme_override_font_sizes/font_size = 17
+text = "QUIT GAME"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOverScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_baini")
+}
+autoplay = "fade_in"
