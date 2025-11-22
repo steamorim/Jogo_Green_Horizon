@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=31 format=3 uid="uid://b2g0x6ckmvyfw"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://b2g0x6ckmvyfw"]
 
 [ext_resource type="Texture2D" uid="uid://cdt6dh03wen6x" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="1_e8h52"]
+[ext_resource type="Texture2D" uid="uid://2xnywtltmq66" path="res://sprites/elementos/LIXOS1.png" id="1_pgfha"]
 [ext_resource type="Texture2D" uid="uid://m3840gyt88lv" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/4 - Winter World/Winter_entities (16 x 16).png" id="2_ovcju"]
 [ext_resource type="Texture2D" uid="uid://cyh5jx2ii0mtw" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Snack_machine_Bench_Trash_bin (16 x 16).png" id="3_pgfha"]
 [ext_resource type="Texture2D" uid="uid://byhffyylo02yw" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="4_mv4x7"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b7id7hga1ajpq" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="10_vgdgn"]
 [ext_resource type="Texture2D" uid="uid://nw5g5hs1tj20" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="11_fj5gc"]
 [ext_resource type="Texture2D" uid="uid://kc7nkj256mt6" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Autumn_entities (16 x 16).png" id="12_5m8f3"]
+[ext_resource type="Texture2D" uid="uid://1hg6avqj3dy2" path="res://sprites/elementos/LIXOS2.png" id="12_mv4x7"]
 [ext_resource type="Texture2D" uid="uid://doogi8wvna362" path="res://sprites/Seasonal Tilesets/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="13_h3sfv"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ll5lq"]
@@ -22,6 +24,30 @@ tile_data = PackedInt32Array(65536, 65537, 5, 1, 589825, 1, 65538, 65537, 5)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_yq8tf"]
 tile_data = PackedInt32Array(65536, 196611, 0, 65537, 327681, 5, 65538, 393217, 5, 3, 327681, 1, 65539, 458753, 5, 65540, 65537, 5, 65541, 65537, 5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48co8"]
+texture = ExtResource("1_pgfha")
+texture_region_size = Vector2i(14, 6)
+0:0/size_in_atlas = Vector2i(2, 6)
+0:0/0 = 0
+4:0/size_in_atlas = Vector2i(2, 6)
+4:0/0 = 0
+2:5/size_in_atlas = Vector2i(2, 6)
+2:5/0 = 0
+0:10/size_in_atlas = Vector2i(2, 6)
+0:10/0 = 0
+4:10/size_in_atlas = Vector2i(2, 6)
+4:10/0 = 0
+7:6/size_in_atlas = Vector2i(2, 4)
+7:6/0 = 0
+10:9/size_in_atlas = Vector2i(4, 6)
+10:9/0 = 0
+14:9/size_in_atlas = Vector2i(4, 6)
+14:9/0 = 0
+10:2/size_in_atlas = Vector2i(4, 5)
+10:2/0 = 0
+14:2/size_in_atlas = Vector2i(4, 5)
+14:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlg7c"]
 texture = ExtResource("1_e8h52")
@@ -169,6 +195,20 @@ texture = ExtResource("9_cv6x8")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ym5sv"]
 texture = ExtResource("10_vgdgn")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hnm2q"]
+texture = ExtResource("12_mv4x7")
+texture_region_size = Vector2i(12, 9)
+0:4/size_in_atlas = Vector2i(2, 3)
+0:4/0 = 0
+2:4/size_in_atlas = Vector2i(2, 3)
+2:4/0 = 0
+4:4/size_in_atlas = Vector2i(2, 3)
+4:4/0 = 0
+6:4/size_in_atlas = Vector2i(2, 3)
+6:4/0 = 0
+3:7/size_in_atlas = Vector2i(3, 2)
+3:7/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sng2h"]
 texture = ExtResource("11_fj5gc")
 1:1/0 = 0
@@ -278,6 +318,8 @@ sources/12 = SubResource("TileSetAtlasSource_355h4")
 sources/13 = SubResource("TileSetAtlasSource_ca6q5")
 sources/14 = SubResource("TileSetAtlasSource_yerfe")
 sources/15 = SubResource("TileSetAtlasSource_abp7u")
+sources/0 = SubResource("TileSetAtlasSource_48co8")
+sources/5 = SubResource("TileSetAtlasSource_hnm2q")
 pattern_0 = SubResource("TileMapPattern_ll5lq")
 pattern_1 = SubResource("TileMapPattern_17rxn")
 pattern_2 = SubResource("TileMapPattern_yq8tf")

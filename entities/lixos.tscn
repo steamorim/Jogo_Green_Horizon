@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpgnvxb16ev6i"]
+
+[ext_resource type="Texture2D" uid="uid://dx7bwdngy5cx3" path="res://sprites/elementos/e8abb0afa30c695f70cc3113874bd635.png" id="1_hpa5t"]
+[ext_resource type="Script" uid="uid://d14hehhjf0qc8" path="res://scripts/lixos.gd" id="1_ohfsa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohfsa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hpa5t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8txj8"]
+radius = 8.944272
+
+[node name="Lixos" type="Area2D"]
+light_mask = 8
+visibility_layer = 8
+z_index = 4
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ohfsa")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+visibility_layer = 8
+scale = Vector2(0.02337963, 0.02337963)
+sprite_frames = SubResource("SpriteFrames_ohfsa")
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 9
+shape = SubResource("CircleShape2D_8txj8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_animated_sprite_2d_animation_finished"]

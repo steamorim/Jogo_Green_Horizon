@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cksnoghs227tv"]
+
+[ext_resource type="Script" uid="uid://jhjtog34jjcf" path="res://scripts/hud_progresso.gd" id="1_ur3ol"]
+
+[node name="Hud_progresso" type="CanvasLayer"]
+script = ExtResource("1_ur3ol")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 46.0
+offset_bottom = 22.0
+
+[node name="ProgressLixo" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -131.0
+offset_top = 17.0
+offset_right = -21.0
+offset_bottom = 58.0
+grow_horizontal = 0
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -7.0
+offset_right = 33.0
+offset_bottom = 23.0
