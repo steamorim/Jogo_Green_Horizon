@@ -81,6 +81,7 @@ position = Vector2(868, 327)
 
 [node name="GameOverUI" parent="UILayer" instance=ExtResource("8_ll5lq")]
 visible = false
+mouse_filter = 0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 scale = Vector2(0.2, 0.2)
