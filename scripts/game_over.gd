@@ -2,13 +2,13 @@ extends Control
 
 func _ready():
 	pass
-	
-func _process(_delta):
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	pass
 
-func _on_restart_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://scripts/TelaInicial.tscn")
+func _on_restartbtn_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/game.tscn")
 
-
-func _on_quit_btn_pressed() -> void:
+func _on_quitbtn_pressed() -> void:
 	get_tree().quit()
