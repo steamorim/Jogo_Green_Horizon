@@ -62,6 +62,7 @@ size = Vector2(10, 20)
 
 [node name="Ayla" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_q8klw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

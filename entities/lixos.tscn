@@ -21,6 +21,8 @@ radius = 8.944272
 light_mask = 8
 visibility_layer = 8
 z_index = 4
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_ohfsa")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]

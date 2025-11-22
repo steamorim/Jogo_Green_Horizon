@@ -37,3 +37,5 @@ func atualizar_vidas(vidas_atuais: int):
 			icone.show() 
 		else:
 			icone.hide()
+			
+			

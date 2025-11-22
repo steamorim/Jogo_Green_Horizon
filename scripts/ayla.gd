@@ -4,12 +4,19 @@ extends CharacterBody2D
 # 🚨 Referência para o nó HUD, que tem o script hud.gd
 @onready var hud = get_parent().get_node("HUD") 
 
+@onready var hud_progresso = get_parent().get_node("Hud_progresso") 
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 
 var is_dead: bool = false
 var origin_position: Vector2
 var lives: int = 3 # ← Três vidas
+
+# Variáveis de Coleta
+var trash_collected: int = 0
+var trash_total: int = 4 # Defina o total de lixo na fase.
+# ... (restante das suas variáveis)
 
 func _ready():
 	# Salva a posição inicial do jogador
@@ -155,5 +162,18 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 	print("DEBUG: Não é lava nem inimigo")
 
-func _on_lava_area_body_entered(_body: Node2D) -> void:
-	die()
+# FUNÇÃO DE COLETA DE LIXO
+# -----------------------------
+func collect_trash():
+	trash_collected += 1
+	print("Lixo coletado: ", trash_collected, "/", trash_total)
+	
+	# 🚨 Notifica o HUD sobre o progresso
+	if is_instance_valid(hud_progresso):
+		hud_progresso.atualizar_progresso_lixo(trash_collected, trash_total)
+
+	if trash_collected >= trash_total:
+		# Lógica de vitória ou conclusão de fase
+		print("Fase Concluída!")
+		# Aqui você chamaria uma função 'level_complete()'
+		

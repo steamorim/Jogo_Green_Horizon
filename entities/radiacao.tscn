@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2om62w8r5rj4"]
+
+[ext_resource type="Texture2D" uid="uid://do4b6thngkelg" path="res://sprites/elementos/BARRIS.png" id="1_1vgex"]
+[ext_resource type="Script" uid="uid://b2k6s6v44cpm6" path="res://scripts/radiacao.gd" id="1_pvmf7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufmhu"]
+atlas = ExtResource("1_1vgex")
+region = Rect2(0, 0, 34, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjtuy"]
+atlas = ExtResource("1_1vgex")
+region = Rect2(35, 0, 34, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5duh"]
+atlas = ExtResource("1_1vgex")
+region = Rect2(70, 0, 34, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q73ao"]
+atlas = ExtResource("1_1vgex")
+region = Rect2(105, 0, 34, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njwfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufmhu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjtuy")
+}],
+"loop": true,
+"name": &"default_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5duh")
+}],
+"loop": true,
+"name": &"default_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q73ao")
+}],
+"loop": true,
+"name": &"default_3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b10o5"]
+size = Vector2(11, 19)
+
+[node name="Radiacao" type="Area2D" groups=["damage"]]
+collision_mask = 2
+script = ExtResource("1_pvmf7")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.57352936, 0.57840914)
+sprite_frames = SubResource("SpriteFrames_njwfp")
+animation = &"default_2"
+autoplay = "default_2"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_b10o5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

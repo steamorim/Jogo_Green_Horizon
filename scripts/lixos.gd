@@ -8,6 +8,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
-func _on_body_entered(_body: Node2D) -> void:
-	queue_free()
+func _on_body_entered(body: Node2D) -> void:
+	# 1. Verifica se o corpo que entrou é o Player
+	# Você pode usar body.is_in_group("player") se você adicionou o player a um grupo.
+	# Como o seu Player usa a função 'collect_trash', podemos verificar isso:
+	if body is CharacterBody2D and body.has_method("collect_trash"):
+		
+		# 2. Chama a função do Player para aumentar a contagem
+		body.collect_trash()
+		
+		# 3. Remove o item do jogo
+		queue_free()
